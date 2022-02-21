@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/producto"
+    app:startDestination="@id/listaFragment">
+
+    <fragment
+        android:id="@+id/detallesFragment"
+        android:name="com.cod3f1re.tienda.view.DetallesFragment"
+        android:label="fragment_detalles"
+        tools:layout="@layout/fragment_detalles" >
+        <action
+            android:id="@+id/actionLista"
+            app:destination="@id/listaFragment" />
+        <argument
+            android:name="dogUuid"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaFragment"
+        android:name="com.cod3f1re.tienda.view.ListaFragment"
+        android:label="fragment_lista"
+        tools:layout="@layout/fragment_lista" >
+        <action
+            android:id="@+id/actionDetalles"
+            app:destination="@id/detallesFragment" />
+    </fragment>
+</navigation>
